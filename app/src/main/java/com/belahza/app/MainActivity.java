@@ -57,7 +57,10 @@ public class MainActivity extends Activity {
         search.setSingleLine(true);
         search.setTextSize(16);
         search.setPadding(Ui.dp(this,18),0,Ui.dp(this,18),0);
-        search.setMinHeight(Ui.dp(this,56));
+
+        // ✅ FIX
+        search.setMinimumHeight(Ui.dp(this,56));
+
         search.setBackground(Ui.bgStroke(this,android.graphics.Color.WHITE,20,Ui.LINE,1));
         search.setContentDescription(LanguageManager.t(this,"search_hint"));
         content.addView(search,Ui.mlp(this,-1,-2,0,10,0,6));
@@ -139,7 +142,10 @@ public class MainActivity extends Activity {
         card.setLayoutDirection(LanguageManager.layoutDirection(this));
         card.setPadding(Ui.dp(this,16),Ui.dp(this,15),Ui.dp(this,16),Ui.dp(this,15));
         card.setBackground(Ui.bgStroke(this,android.graphics.Color.WHITE,22,Ui.LINE,1));
-        card.setMinHeight(Ui.dp(this,76));
+
+        // ✅ FIX
+        card.setMinimumHeight(Ui.dp(this,76));
+
         card.setContentDescription(title + ". " + subtitle);
         card.setOnClickListener(v -> startActivity(new Intent(this,target)));
         TextView symbol = Ui.text(this,icon,25,accent,Typeface.BOLD);
@@ -155,23 +161,15 @@ public class MainActivity extends Activity {
         return card;
     }
 
-    private void render(String query) {
-        emergencyList.removeAllViews();
-        List<EmergencyData.Emergency> filtered = SmartSearch.filter(this,all,query);
-        for (EmergencyData.Emergency emergency : filtered) {
-            emergencyList.addView(emergencyCard(emergency),Ui.mlp(this,-1,-2,0,0,0,10));
-        }
-        if (filtered.isEmpty()) {
-            emergencyList.addView(Ui.text(this,LanguageManager.t(this,"no_match"),15,Ui.MUTED,Typeface.NORMAL));
-        }
-    }
-
     private View emergencyCard(EmergencyData.Emergency emergency) {
         LinearLayout card = Ui.horizontal(this);
         card.setLayoutDirection(LanguageManager.layoutDirection(this));
         card.setPadding(Ui.dp(this,16),Ui.dp(this,15),Ui.dp(this,16),Ui.dp(this,15));
         card.setBackground(Ui.bgStroke(this,android.graphics.Color.WHITE,22,Ui.LINE,1));
-        card.setMinHeight(Ui.dp(this,104));
+
+        // ✅ FIX
+        card.setMinimumHeight(Ui.dp(this,104));
+
         String title = LanguageManager.emergencyTitle(this,emergency);
         String summary = LanguageManager.emergencyLine(this,emergency);
         card.setContentDescription(title + ". " + summary);
@@ -195,6 +193,17 @@ public class MainActivity extends Activity {
         card.addView(text,Ui.lp(0,-2));
         ((LinearLayout.LayoutParams)text.getLayoutParams()).weight=1;
         return card;
+    }
+
+    private void render(String query) {
+        emergencyList.removeAllViews();
+        List<EmergencyData.Emergency> filtered = SmartSearch.filter(this,all,query);
+        for (EmergencyData.Emergency emergency : filtered) {
+            emergencyList.addView(emergencyCard(emergency),Ui.mlp(this,-1,-2,0,0,0,10));
+        }
+        if (filtered.isEmpty()) {
+            emergencyList.addView(Ui.text(this,LanguageManager.t(this,"no_match"),15,Ui.MUTED,Typeface.NORMAL));
+        }
     }
 
     private LinearLayout.LayoutParams weight(int w,int h,int l,int t,int r,int b) {
