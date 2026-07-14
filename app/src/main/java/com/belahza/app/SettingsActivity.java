@@ -1,6 +1,6 @@
-import com.belahza.app.BuildConfig;
 package com.belahza.app;
 
+import com.belahza.app.BuildConfig;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Typeface;
