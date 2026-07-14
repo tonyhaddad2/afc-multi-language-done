@@ -1,3 +1,4 @@
+import com.belahza.app.BuildConfig;
 package com.belahza.app;
 
 import android.app.Activity;
