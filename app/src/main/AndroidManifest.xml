@@ -1,0 +1,82 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_LOCATION" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+    <uses-feature android:name="android.hardware.camera.any" android:required="false" />
+    <uses-feature android:name="android.hardware.location.gps" android:required="false" />
+    <uses-feature android:name="android.hardware.camera.flash" android:required="false" />
+
+    <application
+        android:allowBackup="false"
+        android:icon="@drawable/be_lahza_logo"
+        android:label="@string/app_name"
+        android:localeConfig="@xml/locales_config"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:resizeableActivity="true"
+        android:roundIcon="@drawable/be_lahza_logo"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="false">
+
+        <service
+            android:name=".LiveLocationService"
+            android:exported="false"
+            android:foregroundServiceType="location" />
+
+        <service
+            android:name=".BeLahzaFirebaseMessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <activity android:name=".ActiveEmergencyActivity" android:exported="false" />
+        <activity android:name=".AdminDashboardActivity" android:exported="false" />
+        <activity android:name=".AiCoachActivity" android:exported="false" />
+        <activity android:name=".AlertActivity" android:exported="false" />
+        <activity android:name=".AnimationLessonActivity" android:exported="false" />
+        <activity android:name=".AuthActivity" android:exported="false" />
+        <activity android:name=".DeveloperHubActivity" android:exported="false" />
+        <activity android:name=".EmergencyCountdownActivity" android:exported="false" />
+        <activity android:name=".EmergencyHistoryActivity" android:exported="false" />
+        <activity
+            android:name=".EmergencyMedicalIdActivity"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:showWhenLocked="true"
+            android:turnScreenOn="true" />
+        <activity android:name=".FirebasePhoneLoginActivity" android:exported="false" />
+        <activity android:name=".GuideActivity" android:exported="false" />
+        <activity android:name=".LanguageActivity" android:exported="false" />
+        <activity android:name=".MainActivity" android:exported="false" />
+        <activity android:name=".MedicalIdPrivacyActivity" android:exported="false" />
+        <activity android:name=".MedicalProfileActivity" android:exported="false" />
+        <activity android:name=".NumbersActivity" android:exported="false" />
+        <activity android:name=".OfflineFallbackActivity" android:exported="false" />
+        <activity android:name=".PermissionSetupActivity" android:exported="false" />
+        <activity android:name=".ProductionTestActivity" android:exported="false" />
+        <activity android:name=".RemoteConfigActivity" android:exported="false" />
+        <activity android:name=".SettingsActivity" android:exported="false" />
+        <activity android:name=".SosActivity" android:exported="false" />
+        <activity android:name=".TrainingTimerActivity" android:exported="false" />
+        <activity android:name=".TrustedContactsActivity" android:exported="false" />
+        <activity android:name=".TrustedEmergencyActivity" android:exported="false" />
+
+        <activity
+            android:name=".SplashActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>

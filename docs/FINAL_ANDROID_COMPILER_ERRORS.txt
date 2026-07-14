@@ -1,0 +1,1 @@
+No Java compiler error lines detected in the available local report.

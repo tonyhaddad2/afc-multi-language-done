@@ -1,0 +1,32 @@
+services:
+  - type: web
+    name: be-lahza-backend
+    runtime: docker
+    plan: starter
+    rootDir: backend
+    healthCheckPath: /health
+    envVars:
+      - key: PHONE_LOOKUP_HMAC_SECRET
+        sync: false
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 8080
+      - key: DATABASE_URL
+        sync: false
+      - key: JWT_PUBLIC_KEY_OR_SECRET
+        sync: false
+      - key: FIELD_ENCRYPTION_KEY_BASE64
+        sync: false
+      - key: FIELD_ENCRYPTION_KEY_ID
+        value: primary-v1
+      - key: FCM_SERVICE_ACCOUNT_JSON
+        sync: false
+      - key: ADMIN_USER_IDS
+        sync: false
+      - key: ALLOW_DEV_AUTH
+        value: false
+      - key: ALLOWED_ORIGINS
+        value: ""
+
+# Add PHONE_LOOKUP_HMAC_SECRET as a secret environment variable.

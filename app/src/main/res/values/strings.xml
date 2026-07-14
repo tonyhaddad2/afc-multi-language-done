@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">be lahza</string>
+    <string name="production_api_base_url">https://api.belahza.app</string>
+</resources>

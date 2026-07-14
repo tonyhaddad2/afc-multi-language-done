@@ -1,0 +1,57 @@
+[
+  {
+    "file": "EmergencyMode.java",
+    "class": "EmergencySyncQueue",
+    "method": "enqueueEmergency"
+  },
+  {
+    "file": "EmergencyMode.java",
+    "class": "EmergencySyncQueue",
+    "method": "enqueueEmergency"
+  },
+  {
+    "file": "ActiveEmergencyActivity.java",
+    "class": "EmergencyMode",
+    "method": "resolve"
+  },
+  {
+    "file": "ActiveEmergencyActivity.java",
+    "class": "EmergencyMode",
+    "method": "cancel"
+  },
+  {
+    "file": "LiveLocationService.java",
+    "class": "EmergencySyncQueue",
+    "method": "enqueueLocation"
+  },
+  {
+    "file": "LiveLocationService.java",
+    "class": "EmergencySyncQueue",
+    "method": "enqueueLocation"
+  },
+  {
+    "file": "EmergencySyncQueue.java",
+    "class": "EmergencyMode",
+    "method": "attachServerEmergency"
+  },
+  {
+    "file": "OfflineFallbackActivity.java",
+    "class": "EmergencySyncQueue",
+    "method": "preview"
+  },
+  {
+    "file": "ProductionTestActivity.java",
+    "class": "EmergencyMode",
+    "method": "trigger"
+  },
+  {
+    "file": "ProductionTestActivity.java",
+    "class": "EmergencySyncQueue",
+    "method": "preview"
+  },
+  {
+    "file": "EmergencyCountdownActivity.java",
+    "class": "EmergencyMode",
+    "method": "trigger"
+  }
+]

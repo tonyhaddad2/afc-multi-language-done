@@ -1,0 +1,2 @@
+javalang unavailable: ModuleNotFoundError("No module named 'javalang'")
+Fallback Java structural syntax checks passed.

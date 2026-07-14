@@ -1,0 +1,12 @@
+{
+  "self_check": {
+    "returncode": 0,
+    "stdout": "be lahza project self-check passed\n",
+    "stderr": "Spreadsheet runtime warmup failed during python startup\nTraceback (most recent call last):\n  File \"/tmp/tmp.yTcnQsZYiA/artifact_tool_v2-2.8.4/artifact_tool/patches/warm_spreadsheet_runtime_on_startup.py\", line 26, in warm_spreadsheet_runtime_on_startup\n  File \"/tmp/tmp.yTcnQsZYiA/artifact_tool_v2-2.8.4/artifact_tool/spreadsheet_warmup.py\", line 785, in warm_spreadsheet_runtime\n  File \"/tmp/tmp.yTcnQsZYiA/artifact_tool_v2-2.8.4/artifact_tool/spreadsheet_warmup.py\", line 720, in _warm_feature_flows\n  File \"/tmp/tmp.yTcnQsZYiA/artifact_tool_v2-2.8.4/artifact_tool/spreadsheet_warmup.py\", line 704, in _warm_collaboration_flows\n  File \"/tmp/tmp.yTcnQsZYiA/artifact_tool_v2-2.8.4/artifact_tool/generated/interface/models.py\", line 30820, in hydrate_crdt_from_proto\n  File \"/tmp/tmp.yTcnQsZYiA/artifact_tool_v2-2.8.4/artifact_tool/rpc/remote.py\", line 749, in __call__\n  File \"/tmp/tmp.yTcnQsZYiA/artifact_tool_v2-2.8.4/artifact_tool/rpc/client.py\", line 150, in call\nartifact_tool.rpc.client.RemoteError: hydrateCrdtFromProto requires an empty collaborative document.\n"
+  },
+  "backend_check": {
+    "returncode": 0,
+    "stdout": "\n> be-lahza-backend@0.9.0 check\n> node --check src/server.js && node --check src/config.js && node --check src/identity.js && node --check src/auth.js && node --check src/crypto.js && node --check src/keyring.js && node --check src/push.js && node --check src/routes/auth.js && node --check src/routes/users.js && node --check src/routes/medical.js && node --check src/routes/trustedContacts.js && node --check src/routes/emergencies.js && node --check src/routes/config.js && node --check src/routes/admin.js\n\n",
+    "stderr": ""
+  }
+}
